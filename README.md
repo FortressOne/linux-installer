@@ -1,5 +1,7 @@
 # FortressOne Linux Installer
 
+Currently tested on Ubuntu 18.04. Doesn't work on your system? [Raise an issue](https://github.com/FortressOne/linux-installer/issues/new).
+
 ## Installation
 
 Download [FortressOne](https://github.com/FortressOne/linux-installer/releases/latest)
