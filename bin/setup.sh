@@ -12,7 +12,15 @@ error() {
 [ `which wget` ] || error "ERROR: The package 'wget' is not installed. Please install it and run the installation again."
 [ `which desktop-file-install` ] || error "ERROR: The package 'desktop-file-install' is not installed. Please install it and run the installation again."
 
-TARGET="$HOME/bin/fortressone"
+DEFAULT_TARGET="$HOME/bin/fortressone"
+
+echo "Where do you want to install FortressOne? [$DEFAULT_TARGET]: "
+read TARGET
+
+# use default install directory if user did not input a directory
+if [ -z "$TARGET" ]; then
+  TARGET=$DEFAULT_TARGET
+fi
 
 # get install directory (default ~/bin/fortressone)
 echo "Installing to $TARGET"
