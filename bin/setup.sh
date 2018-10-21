@@ -21,16 +21,27 @@ if [ ! -z "$INSTALL_DIR" ]; then
   TARGET=$INSTALL_DIR
 fi
 
-# get install directory (default ~/bin/fortressone)
-echo "Installing to $TARGET"
-
 # check if directory already exists
 if [ -d "$TARGET" ]; then
   error "ERROR: Target directory already exists."
 fi
 
+# Configuring .desktop file
+sed -i "s|INSTALL_DIR|$TARGET|g" fortressone.desktop
+
+# Validate .desktop file
+if [ $(desktop-file-validate fortressone.desktop) ]; then
+  error "ERROR: Invalid .desktop file."
+fi
+
+echo "Installing to $TARGET"
+
 # Creating installation directory
 mkdir -p "$TARGET"
+
+# Install .desktop file
+sudo desktop-file-install fortressone.desktop
+sudo update-desktop-database
 
 # Check directory succesfully created
 if [ ! -d "$TARGET" ]; then
@@ -39,18 +50,6 @@ fi
 
 # Installing logo
 cp logo.png "$TARGET"
-
-# Checking for .desktop file location
-if [ ! -d "/usr/share/applications" ]; then
-  error "ERROR: /usr/share/applications directory doesn't exist"
-fi
-
-# Configuring .desktop file
-sed -i "s|\$INSTALL_DIR|$TARGET|g" fortressone.desktop
-
-# Installing .desktop file
-# TODO: desktop-file-validate
-sudo desktop-file-install fortressone.desktop
 
 # get the ezquake linux package
 wget https://github.com/ezQuake/ezquake-source/releases/download/3.1/ezquake3.1-linux64-full.tar.gz
