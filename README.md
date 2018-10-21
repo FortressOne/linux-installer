@@ -7,7 +7,7 @@ Currently tested on Ubuntu 18.04. Doesn't work on your system? [Raise an issue](
 Download [FortressOne](https://github.com/FortressOne/linux-installer/releases/latest)
 
 ```bash
-$ ./fortressone.run
+$ ./fortressone-0.2.0.run
 ```
 
 
