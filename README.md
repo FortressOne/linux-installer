@@ -21,5 +21,5 @@ Requires [Makeself](https://makeself.io/) available in PATH.
 ### Build:
 
 ```bash
-$ makeself.sh fortressone-0.2.0.run 'FortressOne - The QuakeWorld Team Fortress installer' ./setup.sh
+$ makeself.sh fortressone-0.2.0.run 'FortressOne - A QuakeWorld Team Fortress installer' ./setup.sh
 ```
