@@ -14,6 +14,16 @@ error() {
 
 TARGET="$HOME/bin/fortressone"
 
+printf "Choose installation directory [${TARGET}]: "
+read INSTALL_DIR
+
+if [ ! -z $INSTALL_DIR ]; then
+  TARGET=$INSTALL_DIR
+fi
+
+echo $TARGET
+error "exit"
+
 # get install directory (default ~/bin/fortressone)
 echo "Installing to $TARGET"
 
