@@ -17,9 +17,11 @@ $ sh fortressone-0.2.0.run
 
 Requires [Makeself](https://makeself.io/) available in PATH.
 
+On Ubunutu: `sudo apt install makeself`
+
 
 ### Build:
 
 ```bash
-$ makeself.sh fortressone-0.2.0.run 'FortressOne - A QuakeWorld Team Fortress installer' ./setup.sh
+$ sh build.sh
 ```
