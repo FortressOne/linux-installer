@@ -75,20 +75,20 @@ tar -xf ezquake3.1-linux64-full.tar.gz -C "$TARGET"
 echo "Installing ezQuake 3.1 binary"
 cp ezquake-linux-x86_64 "$TARGET"
 
-echo "Installing FortressOne media files"
-unzip -qq fortress-one-gfx.zip -d "$TARGET"
-
-echo "Installing Quake shareware media files"
+echo "Installing Quake shareware pak file"
 cp id1/pak0.pak "$TARGET/id1/"
 
-echo "Installing FortressOne media files"
+echo "Installing FortresOne pak file"
 cp fortress/pak0.pak "$TARGET/fortress/"
 
-echo "Installing default configuration files"
+echo "Installing FortressOne gfx files"
+unzip -qq fortress-one-gfx.zip -d "$TARGET"
+
+echo "Installing FortressOne default config files"
 unzip -qq master.zip
 cp -r fortress-one-cfgs-master/* "$TARGET"
 
 # Update .desktop database
 update-desktop-database --quiet "$HOME/.local/share/applications"
 
-echo "FortressOne 0.2.0 installed successfully"
+echo "FortressOne installed successfully"
