@@ -9,7 +9,9 @@ error() {
 [ "$(which unzip)" ] || error "ERROR: The package 'unzip' is not installed. Please install it and run the installation again."
 [ "$(which tar)" ] || error "ERROR: The package 'tar' is not installed. Please install it and run the installation again."
 [ "$(which wget)" ] || error "ERROR: The package 'wget' is not installed. Please install it and run the installation again."
-[ "$(which desktop-file-install)" ] || error "ERROR: The package 'desktop-file-install' is not installed. Please install it and run the installation again."
+[ "$(which desktop-file-install)" ] || error "ERROR: The package 'desktop-file-utils' is not installed. Please install it and run the installation again."
+[ "$(which desktop-file-validate)" ] || error "ERROR: The package 'desktop-file-utils' is not installed. Please install it and run the installation again."
+[ "$(which update-desktop-database)" ] || error "ERROR: The package 'desktop-file-utils' is not installed. Please install it and run the installation again."
 
 TARGET="$HOME/bin/fortressone"
 
