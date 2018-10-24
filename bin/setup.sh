@@ -79,6 +79,7 @@ echo "Installing Quake shareware pak file"
 cp id1/pak0.pak "$TARGET/id1/"
 
 echo "Installing FortresOne pak file"
+mkdir -p "$TARGET/fortress/"
 cp fortress/pak0.pak "$TARGET/fortress/"
 
 echo "Installing FortressOne gfx files"
