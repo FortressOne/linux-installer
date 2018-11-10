@@ -52,6 +52,12 @@ cp logo.png "$TARGET"
 echo "Downloading FortressOne 3.1.0 client"
 wget -nv --show-progress https://github.com/FortressOne/ezquake-source/releases/download/v3.1.0/fortressone-linux-x86_64
 
+echo "Downloading FortressOne fragfile.dat"
+wget -nv --show-progress https://github.com/FortressOne/ezquake-source/releases/download/v3.1.0/fragfile.dat
+
+echo "Downloading server browser sources"
+wget -nv --show-progress https://github.com/FortressOne/ezquake-source/releases/download/v3.1.0/sb.zip
+
 echo "Downloading FortressOne client media files"
 wget -nv --show-progress https://github.com/FortressOne/ezquake-media/releases/download/v1.0.0/fortressone.pk3
 
@@ -69,6 +75,16 @@ wget -nv --show-progress https://github.com/FortressOne/fortress-one-cfgs/archiv
 echo "Installing FortressOne 3.1.0 client"
 cp fortressone-linux-x86_64 "$TARGET"
 chmod +x "$TARGET/fortressone-linux-x86_64"
+mkdir "$TARGET/ezquake"
+mkdir "$TARGET/id1"
+mkdir "$TARGET/fortress"
+
+echo "Installing FortressOne fragfile.dat"
+cp fragfile.dat "$TARGET/fortress"
+
+echo "Installing server browser sources"
+unzip -qq sb.zip
+cp -r sb/ "$TARGET/ezquake"
 
 echo "Installing Quake shareware pak file"
 cp -r id1/ "$TARGET"
