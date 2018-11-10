@@ -2,9 +2,9 @@
 Version=1.0
 Name=FortressOne
 Comment=QuakeWorld Team Fortress
-Exec=INSTALL_DIR/ezquake-linux-x86_64 -basedir INSTALL_DIR -game fortress
+Exec=INSTALL_DIR/fortressone-linux-x86_64 -basedir INSTALL_DIR
 Icon=INSTALL_DIR/logo.png
 Terminal=false
 Type=Application
 Categories=Game
-StartupWMClass=ezquake-linux-x86_64
+StartupWMClass=fortressone-linux-x86_64

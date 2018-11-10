@@ -49,41 +49,35 @@ fi
 # Installing logo
 cp logo.png "$TARGET"
 
-echo "Downloading ezQuake 3.1 full"
-wget -nv --show-progress https://github.com/ezQuake/ezquake-source/releases/download/3.1/ezquake3.1-linux64-full.tar.gz
+echo "Downloading FortressOne 3.1.0 client"
+wget -nv --show-progress https://github.com/FortressOne/ezquake-source/releases/download/v3.1.0/fortressone-linux-x86_64
 
-echo "Downloading ezQuake 3.1 binary"
-wget -nv --show-progress https://s3-ap-southeast-2.amazonaws.com/qwtf/ezquake31/ezquake-linux-x86_64
-
-echo "Downloading FortressOne media files"
-wget -nv --show-progress https://s3-ap-southeast-2.amazonaws.com/qwtf/fortress-one-gfx.zip
+echo "Downloading FortressOne client media files"
+wget -nv --show-progress https://github.com/FortressOne/ezquake-media/releases/download/v1.0.0/fortressone.pk3
 
 echo "Downloading Quake shareware media files"
 mkdir id1/
 wget -nv --show-progress https://s3-ap-southeast-2.amazonaws.com/qwtf/paks/id1/pak0.pak -P id1/
 
-echo "Downloading FortressOne media files"
+echo "Downloading FortressOne server media files"
 mkdir fortress/
 wget -nv --show-progress https://s3-ap-southeast-2.amazonaws.com/qwtf/paks/fortress/pak0.pak -P fortress/
 
 echo "Downloading default configuration files"
 wget -nv --show-progress https://github.com/FortressOne/fortress-one-cfgs/archive/master.zip
 
-echo "Installing ezQuake 3.1 full"
-tar -xf ezquake3.1-linux64-full.tar.gz -C "$TARGET"
-
-echo "Installing ezQuake 3.1 binary"
-cp ezquake-linux-x86_64 "$TARGET"
+echo "Installing FortressOne 3.1.0 client"
+cp fortressone-linux-x86_64 "$TARGET"
+chmod +x "$TARGET/fortressone-linux-x86_64"
 
 echo "Installing Quake shareware pak file"
-cp id1/pak0.pak "$TARGET/id1/"
+cp -r id1/ "$TARGET"
 
 echo "Installing FortresOne pak file"
-mkdir -p "$TARGET/fortress/"
-cp fortress/pak0.pak "$TARGET/fortress/"
+cp -r fortress/ "$TARGET"
 
-echo "Installing FortressOne gfx files"
-unzip -qq fortress-one-gfx.zip -d "$TARGET"
+echo "Installing FortressOne client media files"
+cp fortressone.pk3 "$TARGET/fortress"
 
 echo "Installing FortressOne default config files"
 unzip -qq master.zip
