@@ -23,7 +23,11 @@ if [ ! -z "$INSTALL_DIR" ]; then
 fi
 
 if [ -d "$TARGET" ]; then
-  error "ERROR: Target directory already exists."
+  printf "Target directory already exists. Continue? [y]: "
+  read -r CONTINUE
+  if [ "$CONTINUE" != "" ] && [ "$CONTINUE" != "y" ] && [ "$CONTINUE" != "Y" ]; then
+    error "ERROR: Installation aborted."
+  fi
 fi
 
 # Configuring .desktop file
@@ -67,7 +71,7 @@ wget -nv --show-progress https://s3-ap-southeast-2.amazonaws.com/qwtf/paks/id1/p
 
 echo "Downloading FortressOne server media files"
 mkdir fortress/
-wget -nv --show-progress https://s3-ap-southeast-2.amazonaws.com/qwtf/paks/fortress/pak0.pak -P fortress/
+wget -nv --show-progress https://github.com/FortressOne/assets/releases/download/1.0.0/pak0.pk3 -P fortress/
 
 echo "Downloading default configuration files"
 wget -nv --show-progress https://github.com/FortressOne/fortress-one-cfgs/archive/master.zip
