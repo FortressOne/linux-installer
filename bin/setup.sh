@@ -74,7 +74,7 @@ mkdir fortress/
 wget -nv --show-progress https://github.com/FortressOne/assets/releases/download/1.0.0/pak0.pk3 -P fortress/
 
 echo "Downloading default configuration files"
-wget -nv --show-progress https://github.com/FortressOne/fortress-one-cfgs/archive/master.zip
+wget -nv --show-progress https://github.com/FortressOne/client-configs/archive/master.zip
 
 echo "Installing FortressOne 3.1.0 client"
 cp fortressone-linux-x86_64 "$TARGET"
@@ -101,7 +101,7 @@ cp fortressone.pk3 "$TARGET/fortress"
 
 echo "Installing FortressOne default config files"
 unzip -qq master.zip
-cp -r fortress-one-cfgs-master/* "$TARGET"
+cp -r client-configs-master/* "$TARGET"
 
 # Update .desktop database
 update-desktop-database --quiet "$HOME/.local/share/applications"
