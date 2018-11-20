@@ -53,14 +53,14 @@ fi
 # Installing logo
 cp logo.png "$TARGET"
 
-echo "Downloading FortressOne 3.1.0 client"
-wget -nv --show-progress https://github.com/FortressOne/ezquake-source/releases/download/v3.1.0/fortressone-linux-x86_64
+echo "Downloading FortressOne 3.1 client"
+wget -nv --show-progress https://github.com/FortressOne/ezquake-source/releases/download/v3.1/fortressone-linux-x86_64
 
 echo "Downloading FortressOne fragfile.dat"
-wget -nv --show-progress https://github.com/FortressOne/ezquake-source/releases/download/v3.1.0/fragfile.dat
+wget -nv --show-progress https://github.com/FortressOne/ezquake-source/releases/download/v3.1/fragfile.dat
 
 echo "Downloading server browser sources"
-wget -nv --show-progress https://github.com/FortressOne/ezquake-source/releases/download/v3.1.0/sb.zip
+wget -nv --show-progress https://github.com/FortressOne/ezquake-source/releases/download/v3.1/sb.zip
 
 echo "Downloading FortressOne client media files"
 wget -nv --show-progress https://github.com/FortressOne/ezquake-media/releases/download/v1.0.0/fortressone.pk3
@@ -76,7 +76,7 @@ wget -nv --show-progress https://github.com/FortressOne/assets/releases/download
 echo "Downloading default configuration files"
 wget -nv --show-progress https://github.com/FortressOne/client-configs/archive/master.zip
 
-echo "Installing FortressOne 3.1.0 client"
+echo "Installing FortressOne 3.1 client"
 cp fortressone-linux-x86_64 "$TARGET"
 chmod +x "$TARGET/fortressone-linux-x86_64"
 mkdir "$TARGET/ezquake"

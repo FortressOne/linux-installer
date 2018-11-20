@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VERSION="0.3.1"
+VERSION="1.0.0"
 
 makeself bin/ "fortressone-${VERSION}.run" 'FortressOne - A QuakeWorld Team Fortress package' ./setup.sh
 
