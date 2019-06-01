@@ -67,7 +67,7 @@ wget -nv --show-progress https://github.com/FortressOne/ezquake-media/releases/d
 
 echo "Downloading Quake shareware media files"
 mkdir id1/
-wget -nv --show-progress https://s3-ap-southeast-2.amazonaws.com/qwtf/paks/id1/pak0.pak -P id1/
+wget -nv --show-progress https://www.mirafiori.com/ftp/pub/gaming/pak0.pak -P id1/
 
 echo "Downloading FortressOne server media files"
 mkdir fortress/
