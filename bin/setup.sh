@@ -54,13 +54,13 @@ fi
 cp logo.png "$TARGET"
 
 echo "Downloading FortressOne client"
-wget -nv --show-progress https://github.com/FortressOne/ezquake-source/releases/download/v3.2.1/fortressone-linux-x86_64
+wget -nv --show-progress https://github.com/FortressOne/ezquake-source/releases/download/v3.2.1.1/fortressone-linux-x86_64
 
 echo "Downloading FortressOne fragfile.dat"
-wget -nv --show-progress https://github.com/FortressOne/ezquake-source/releases/download/v3.2.1/fragfile.dat
+wget -nv --show-progress https://github.com/FortressOne/ezquake-source/releases/download/v3.2.1.1/fragfile.dat
 
 echo "Downloading server browser sources"
-wget -nv --show-progress https://github.com/FortressOne/ezquake-source/releases/download/v3.2.1/sb.zip
+wget -nv --show-progress https://github.com/FortressOne/ezquake-source/releases/download/v3.2.1.1/sb.zip
 
 echo "Downloading FortressOne client media files"
 wget -nv --show-progress https://github.com/FortressOne/ezquake-media/releases/download/v1.0.0/fortressone.pk3
